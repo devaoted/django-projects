@@ -23,6 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-ek*s+taf6qt%3wts*lp$$q-#5q1zb2gzns)ov@gc^=j@%s6e0z"
 
 # SECURITY WARNING: don't run with debug turned on in production!
+LOGIN_REDIRECT_URL = "home"
+LOGOUT_REDIRECT_URL = "home"
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -37,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "blog"
+    "blog",
+    "accounts"
 ]
 
 MIDDLEWARE = [
@@ -118,6 +122,8 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
